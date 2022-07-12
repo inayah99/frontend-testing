@@ -35,12 +35,15 @@ function GetSection() {
       <div className="card-header">React Axios GET</div>
       <div className="card-body">
         <div className="input-group input-group-sm">
-          <button className="btn btn-sm btn-primary" onClick={getAllData}>
+          <button className="btn btn-sm btn-primary" 
+          data-testid="get-button"
+          onClick={getAllData}>
             Get All
           </button>
           <button
             className="btn btn-sm btn-warning ml-2"
             onClick={clearGetOutput}
+            data-testid="clear-button"
           >
             Clear
           </button>
@@ -49,7 +52,7 @@ function GetSection() {
         {getResult && (
           <>
             <div className="alert alert-secondary mt-2" role="alert">
-              <pre>{formatResponse(getResult)}</pre>
+              <pre data-testid="get-response">{formatResponse(getResult)}</pre>
             </div>
             {!isError && (
               <div className="alert alert-success mt-2" role="alert">
